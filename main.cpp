@@ -4,12 +4,13 @@
 using namespace std;
 
 int main() {
-    Serial serial(115200);
+    Serial serial(9600);
 
-    string val = "";
+    string val;
 
     while (val!="fine") {
-        cin >> val;
+        getline(cin, val);
+
         serial.write(val);
 
         cout << serial.read() << endl;

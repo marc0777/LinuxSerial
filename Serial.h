@@ -14,14 +14,14 @@ public:
     Serial(int baudrate);
 
     std::string read();
-    void write(std::string data);
+    void write(std::string &data);
 
 private:
     std::fstream serial;
 
-    std::string findPort();
+    std::string findPort(const std::string &base);
     speed_t getBaud(int baudrate);
-    void setPort(std::string port, int baudrate);
+    void setPort(const std::string &port, const int baudrate);
 
 };
 
